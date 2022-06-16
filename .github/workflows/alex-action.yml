@@ -1,0 +1,18 @@
+name: GitHub Actions
+on: [push]
+jobs:
+  Job-One:
+    runs-on: self-hosted
+    permissions:
+      id-token: write
+    steps:
+      - shell: bash
+        run: ls
+      - shell: bash
+        run: echo "my first gh action"
+      - id: idtoken
+        shell: bash
+        run: |
+          x="hello "
+          y="world"
+          echo $x+$y
